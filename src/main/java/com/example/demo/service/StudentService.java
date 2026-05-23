@@ -45,6 +45,8 @@ public class StudentService {
 		
 	}
 	
+	
+	//@CachePut(value = "students", key = "#student.firstName + '-' + #student.lastName")
 	@CachePut(value = "students", key = "#student.rollNo")
 	public Student updateStudent(Student student) {
 		
@@ -88,4 +90,13 @@ public class StudentService {
 
 	Output:
 	[students] */
+	
+	
+	/*
+	    Conditional Caching:
+        @Cacheable(value = "products", condition = "#id > 10")
+
+        Only cache if:
+        id > 10
+	 */
 }
